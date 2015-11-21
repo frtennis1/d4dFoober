@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %} Something appropriate {% endblock %}
+
+{% block content %}
+
+<h1> Melissa wants to bring you home for sushi (GIIIIM). </h1>
+
+<!--This template is the one that should offer the comprehensive description of an offer of food-->
+
+<p> Username of Peep who wants to give you food: {{ offer.user.username }} <br>
+
+Here's a description of what we wants to give you: {{ offer.description }} <br>
+
+Here's how much he wants to charge you: ${{ offer.price }} <br>
+
+Here's when he wants to give it to you: {{ offer.offer_datetime }} <br>
+<!--Melissa, keep in mind that the date isn't formatted there, so just lookup how to format it, it shouldn't be that difficult. -Francisco -->
+
+</p>
+
+{% endblock %}

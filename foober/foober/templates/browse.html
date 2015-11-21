@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} Searching for food {% endblock %}
+
+{% block content %}
+
+<h1> Melissa can't search for food.</h1>
+
+{% for offer in offer_list %}
+
+{% include "short_offer.html" %}
+
+{% endfor %}
+
+{% endblock %}
