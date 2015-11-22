@@ -17,7 +17,7 @@ def populate_long_offer(request, offer_id):
     except:
         raise Http404("Offer " + str(offer_id) + " does not exist.")
         
-    return render(request, 'browse.html', {'offer': offer})
+    return render(request, 'long_offer.html', {'offer': offer})
 
 def get_new_user(request):
     # if this is a POST request we need to process the form data
