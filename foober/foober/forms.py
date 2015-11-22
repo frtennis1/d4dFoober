@@ -1,5 +1,5 @@
 from django import forms
-from localflavor import us
+import localflavor.us.forms as lfforms
 
 class NewUser(forms.Form):
     username = forms.CharField(label='Desired username', max_length=30) # make sure to later check that this is new
@@ -7,7 +7,7 @@ class NewUser(forms.Form):
     last_name = forms.CharField(label='Your last name', max_length=30)
     email = forms.EmailField(label='Your e-mail')
     password = forms.CharField(max_length=32, widget=forms.PasswordInput())
-    zip_code = us.forms.USZipCodeField()
+    zip_code = lfforms.USZipCodeField()
     prof_pic = forms.ImageField()
 
 class Offer(forms.Form):

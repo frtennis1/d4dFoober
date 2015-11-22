@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from views import *
+from foober.views import populate_home_page
 
 urlpatterns = [
-    url(r'^/$', populate_home_page),
+    url(r'^$', populate_home_page),
     url(r'^admin/', include(admin.site.urls)),
 ]
