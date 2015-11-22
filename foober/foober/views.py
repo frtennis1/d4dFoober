@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from foodoffers.models import *
 
 from forms import NewUser, Offer
@@ -13,9 +13,9 @@ def populate_browse(request):
 def populate_long_offer(request, offer_id):
     offer_id = int(offer_id)
     try:
-        offer = FoodOffer.get(pk=offer_id)
+        offer = FoodOffer.objects.get(pk=offer_id)
     except:
-        raise Http404("Offer does not exist.")
+        raise Http404("Offer " + str(offer_id) + " does not exist.")
         
     return render(request, 'browse.html', {'offer': offer})
 

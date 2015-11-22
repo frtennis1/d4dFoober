@@ -20,6 +20,6 @@ from views import *
 urlpatterns = [
     url(r'^$', populate_home_page),
     url(r'^browse/$', populate_browse),
-    url(r'^browse/([0-9+])$', populate_long_offer),
+    url(r'^browse/([0-9]+)$', populate_long_offer),
     url(r'^admin/', include(admin.site.urls)),
 ]
