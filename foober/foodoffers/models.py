@@ -1,6 +1,6 @@
 from django.db import models
 import django.contrib.auth.models as authmodels
-from django.contrib.localflavor import us
+from localflavor import us
 
 # Create your models here.
 

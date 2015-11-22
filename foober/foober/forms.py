@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.localflavor import us
+from localflavor import us
 
 class NewUser(forms.Form):
     username = forms.CharField(label='Desired username', max_length=30) # make sure to later check that this is new
