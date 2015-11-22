@@ -1,10 +1,23 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from foodoffers.models import *
 
 from forms import NewUser, Offer
 
 def populate_home_page(request):
     return render(request, 'index.html', {})
+
+def populate_browse(request):
+    return render(request, 'browse.html', {'offer_list': FoodOffer.objects.all()})
+
+def populate_long_offer(request, offer_id):
+    offer_id = int(offer_id)
+    try:
+        offer = FoodOffer.get(pk=offer_id)
+    except:
+        raise Http404("Offer does not exist.")
+        
+    return render(request, 'browse.html', {'offer': offer})
 
 def get_new_user(request):
     # if this is a POST request we need to process the form data

@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from foober.views import populate_home_page
+from views import *
 
 urlpatterns = [
     url(r'^$', populate_home_page),
+    url(r'^browse/$', populate_browse),
+    url(r'^browse/([0-9+])$', populate_long_offer),
     url(r'^admin/', include(admin.site.urls)),
 ]

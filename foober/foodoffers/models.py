@@ -1,11 +1,11 @@
 from django.db import models
 import django.contrib.auth.models as authmodels
-from localflavor import us
+import localflavor.us.models as lfmodels
 
 # Create your models here.
 
 class User(authmodels.User):
-    zip_code = us.forms.USZipCodeField()
+    zip_code = lfmodels.USZipCodeField()
     prof_pic = models.ImageField(upload_to='/profiles/')
 
 class FoodOffer(models.Model):
