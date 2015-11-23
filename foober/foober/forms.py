@@ -7,6 +7,7 @@ class NewUser(forms.Form):
     last_name = forms.CharField(label='Your last name', max_length=30)
     email = forms.EmailField(label='Your e-mail')
     password = forms.CharField(max_length=32, widget=forms.PasswordInput())
+    confirm = forms.CharField(max_length=32, widget=forms.PasswordInput())
     zip_code = lfforms.USZipCodeField()
     prof_pic = forms.ImageField()
 

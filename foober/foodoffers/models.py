@@ -1,13 +1,20 @@
 from django.db import models
 import django.contrib.auth.models as authmodels
 import localflavor.us.models as lfmodels
+import os
 
 # Create your models here.
 
+
+def rename_file(instance, filename):
+    ext = filename.split('.')[-1]
+    filename = os.path.join(os.getcwd(), 'pics/profiles/%s.%s' % (instance.username, ext))
+    return filename
+    
 class User(authmodels.User):
     zip_code = lfmodels.USZipCodeField()
-    prof_pic = models.ImageField(upload_to='/profiles/')
-
+    prof_pic = models.ImageField(upload_to=rename_file)
+    
 class FoodOffer(models.Model):
     user = models.ForeignKey(User)
     timestamp = models.DateTimeField(auto_now=True)

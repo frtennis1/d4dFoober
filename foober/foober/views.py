@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, Http404
 from foodoffers.models import *
+from django.contrib.auth.hashers import make_password
 
 from forms import NewUser, Offer
 
@@ -25,10 +26,15 @@ def get_new_user(request):
         # create a form instance and populate it with data from the request:
         form = NewUser(request.POST, request.FILES)
         # check whether it's valid:
-        if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
+        if form.is_valid() and request.POST.get('confirm') == request.POST.get('password'):
+            u = User(username = request.POST.get('username'),
+                    first_name = request.POST.get('first_name'),
+                    last_name = request.POST.get('last_name'),
+                    email = request.POST.get('email'),
+                    password = make_password(request.POST.get('password')),
+                    zip_code = request.POST.get('zip_code'),
+                    prof_pic = request.FILES['prof_pic'])
+            u.save()
             return HttpResponseRedirect('/thanks/')
 
     # if a GET (or any other method) we'll create a blank form
