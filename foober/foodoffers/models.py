@@ -13,7 +13,7 @@ def rename_file(instance, filename):
     
 class User(authmodels.User):
     zip_code = lfmodels.USZipCodeField()
-    prof_pic = models.ImageField(upload_to=rename_file)
+    prof_pic = models.ImageField(upload_to=rename_file, max_length=300)
     
 class FoodOffer(models.Model):
     user = models.ForeignKey(User)
