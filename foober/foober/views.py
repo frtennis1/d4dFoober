@@ -66,8 +66,11 @@ def populate_login(request):
     return render(request, 'log_in.html', {'form': form})
             
 def return_static_file(request, fname):
-    f = open(os.path.join(os.getcwd(), fname))
-    return HttpResponse(f.read())
+    try:
+        f = open(os.path.join(os.getcwd(), fname))
+        return HttpResponse(f.read())
+    except:
+         raise Http404("File " + os.path.join(os.getcwd(), fname) + " does not exist.")
                     
     
 def populate_user_created(request):
