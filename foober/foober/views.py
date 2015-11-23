@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect, Http404
+from django.http import HttpResponseRedirect, Http404, HttpResponse
 from foodoffers.models import *
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate, login
@@ -65,7 +65,9 @@ def populate_login(request):
     
     return render(request, 'log_in.html', {'form': form})
             
-                    
+def return_static_file(request, fname):
+    f = open(os.path.join(os.getcwd(), fname))
+    return HttpResponse(f.read())
                     
     
 def populate_user_created(request):

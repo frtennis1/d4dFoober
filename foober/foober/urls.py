@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^browse/([0-9]+)$', populate_long_offer),
     url(r'^register/$', get_new_user),
     url(r'^thanks/$', populate_user_created),
-    url(r'^login/$', populate_login), 
+    url(r'^login/$', populate_login),
+    url(r'^static/(.*)', return_static_file),
     url(r'^admin/', include(admin.site.urls)),
 ]
