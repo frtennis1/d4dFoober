@@ -23,7 +23,7 @@ def get_new_user(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
-        form = NewUser(request.POST)
+        form = NewUser(request.POST, request.FILES)
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
@@ -36,6 +36,9 @@ def get_new_user(request):
         form = NewUser()
 
     return render(request, 'new_user.html', {'form': form})
+    
+def populate_user_created(request):
+    return render(request, 'user_created.html', {})
 
 def get_new_offer(request):
     # if this is a POST request we need to process the form data
