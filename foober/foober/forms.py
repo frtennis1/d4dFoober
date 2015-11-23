@@ -29,6 +29,9 @@ class NewUser(forms.Form):
 #            raise ValidationError('Your passwords do not match.')
 #    
 
+class LogIn(forms.Form):
+    username = forms.CharField(label='Your username', max_length=30)
+    password = forms.CharField(max_length=32, widget=forms.PasswordInput())
 
 class Offer(forms.Form):
     address = forms.CharField(label='Enter the address at which the food will be served',

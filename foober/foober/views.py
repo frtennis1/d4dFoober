@@ -2,8 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, Http404
 from foodoffers.models import *
 from django.contrib.auth.hashers import make_password
+from django.contrib.auth import authenticate, login
 
-from forms import NewUser, Offer
+from forms import *
 
 def populate_home_page(request):
     return render(request, 'index.html', {})
@@ -42,6 +43,30 @@ def get_new_user(request):
         form = NewUser()
 
     return render(request, 'new_user.html', {'form': form})
+
+def populate_login(request):
+    if request.method == 'POST':
+        form = LogIn(request.POST)
+        if form.is_valid():
+            print request.POST['username']
+            print request.POST.get('password')
+            user = authenticate(username=request.POST['username'],
+                                password=request.POST['password'])
+            if user is not None:
+                if user.is_active:
+                    login(request,user)
+                    return HttpResponseRedirect('/browse/')
+                else:
+                    return HttpResponseRedirect('/login/')
+            else:
+                return HttpResponseRedirect('/login/')
+    else:
+        form = LogIn()
+    
+    return render(request, 'log_in.html', {'form': form})
+            
+                    
+                    
     
 def populate_user_created(request):
     return render(request, 'user_created.html', {})
