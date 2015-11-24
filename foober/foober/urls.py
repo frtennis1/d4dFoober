@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^register/$', get_new_user),
     url(r'^thanks/$', populate_user_created),
     url(r'^login/$', populate_login),
+    url(r'^logout/$', populate_logout),
     url(r'^static/(.*)', return_static_file),
     url(r'^admin/', include(admin.site.urls)),
 ]
