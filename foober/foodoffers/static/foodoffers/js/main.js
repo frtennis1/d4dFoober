@@ -1,4 +1,4 @@
-/*---------------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------------
 /*
 /* Main JS
 /*
@@ -6,74 +6,39 @@
 
 (function($) {
 
-	"use strict";
-
 	/*---------------------------------------------------- */
 	/* Preloader
 	------------------------------------------------------ */ 
-   $(window).load(function() {
-
-      // will first fade out the loading animation 
-    	$("#loader").fadeOut("slow", function(){
-
-        // will fade out the whole DIV that covers the website.
-        $("#preloader").delay(300).fadeOut("slow");
-
-      });       
-
-  	})
-
-
-  	/*----------------------------------------------------*/
-  	/* Flexslider
-  	/*----------------------------------------------------*/
   	$(window).load(function() {
 
-	  	$('#hero-slider').flexslider({
-	   	namespace: "flex-",
-	      controlsContainer: ".hero-container",
-	      animation: 'fade',
-	      controlNav: true,
-	      directionNav: false,
-	      smoothHeight: true,
-	      slideshowSpeed: 7000,
-	      animationSpeed: 600,
-	      randomize: false,
-	      before: function(slider){
-			   $(slider).find(".animated").each(function(){
-			   	$(this).removeAttr("class");
-			  	});			  	
-			},
-			start: function(slider){
-			   $(slider).find(".flex-active-slide")
-			           	.find("h1").addClass("animated fadeInDown show")
-			           	.next().addClass("animated fadeInUp show");
-			           		
-			   $(window).trigger('resize');		  			 
-			},
-			after: function(slider){
-			 	$(slider).find(".flex-active-slide")
-			           	.find("h1").addClass("animated fadeInDown show")
-			           	.next().addClass("animated fadeInUp show");			  
-			}
-	   });
+   	// will first fade out the loading animation 
+    	$("#status").fadeOut("slow"); 
 
-	   $('#testimonial-slider').flexslider({
-	   	namespace: "flex-",
-	      controlsContainer: "",
-	      animation: 'slide',
-	      controlNav: true,
-	      directionNav: false,
-	      smoothHeight: true,
-	      slideshowSpeed: 7000,
-	      animationSpeed: 600,
-	      randomize: false,
-	   });
+    	// will fade out the whole DIV that covers the website. 
+    	$("#preloader").delay(500).fadeOut("slow").remove();      
 
-   });
+  	}) 
 
+  	/*----------------------------------------------------*/
+  	/* Backstretch
+  	/*----------------------------------------------------*/
+
+  	if($("html").hasClass('ie8')) {
+  		$("#hero").backstretch("images/hero-bg.jpg");  	
+  		$("#page-title").backstretch("images/hero-bg.jpg");	
+  	} 
 
    /*----------------------------------------------------*/
+  	/* FitText Settings
+  	------------------------------------------------------ */
+  	setTimeout(function() {
+
+   	$('#page-title h1').fitText(1, { minFontSize: '38px', maxFontSize: '54px' });
+
+  	}, 100);
+
+
+	/*----------------------------------------------------*/
 	/* Adjust Primary Navigation Background Opacity
 	------------------------------------------------------*/
    $(window).on('scroll', function() {
@@ -83,7 +48,7 @@
       var header = $('#main-header');
 
 	   if ((y > h + 30 ) && ($(window).outerWidth() > 768 ) ) {
-	      header.addClass('opaque');	      
+	      header.addClass('opaque');
 	   }
       else {
          if (y < h + 30) {
@@ -96,52 +61,21 @@
 
 	});
 
-
-   /*----------------------------------------------------*/
-  	/* Highlight the current section in the navigation bar
-  	------------------------------------------------------*/
-	var sections = $("section"),
-	navigation_links = $("#nav-wrap a");	
-
-	sections.waypoint( {
-
-       handler: function(direction) {
-
-		   var active_section;
-
-			active_section = $('section#' + this.element.id);
-
-			if (direction === "up") active_section = active_section.prev();
-
-			var active_link = $('#nav-wrap a[href="#' + active_section.attr("id") + '"]');			
-
-         navigation_links.parent().removeClass("current");
-			active_link.parent().addClass("current");
-
-		}, 
-
-		offset: '25%'
-
-	});
+   /*-----------------------------------------------------*/
+	/* Alert Boxes
+  	-------------------------------------------------------*/
+	$('.alert-box').on('click', '.close', function() {
+	  $(this).parent().fadeOut(500);
+	});	
 
 
-   /*----------------------------------------------------*/
-  	/* FitText Settings
-  	------------------------------------------------------ */
-  	setTimeout(function() {
-
-   	$('#hero-slider h1').fitText(1, { minFontSize: '30px', maxFontSize: '49px' });
-
-  	}, 100);
-
-
-  	/*-----------------------------------------------------*/
+   /*-----------------------------------------------------*/
   	/* Mobile Menu
    ------------------------------------------------------ */  
-   var menu_icon = $("<span class='menu-icon'>Menu</span>");
+   var menu_icon = $("<span class='menu-icon'></span>");
   	var toggle_button = $("<a>", {                         
                         id: "toggle-btn", 
-                        html : "",
+                        html : "<span class='menu-text'>Menu</span>",
                         title: "Menu",
                         href : "#" } 
                         );
@@ -186,85 +120,121 @@
       	window.location.hash = target;
       });
 
-  	});  
-  
+  	});
+
+
+  	/*----------------------------------------------------*/
+  	/* Highlight the current section in the navigation bar
+  	------------------------------------------------------*/
+	var sections = $("section"),
+	navigation_links = $("#nav-wrap a");
+
+	if($("body").hasClass('homepage')) {
+
+		sections.waypoint( {
+
+	      handler: function(event, direction) {
+
+			   var active_section;
+
+				active_section = $(this);
+				if (direction === "up") active_section = active_section.prev();
+
+				var active_link = $('#nav-wrap a[href="#' + active_section.attr("id") + '"]');
+
+	         navigation_links.parent().removeClass("current");
+				active_link.parent().addClass("current");
+
+			},
+			offset: '25%'
+		});
+
+	}
 
    /*----------------------------------------------------*/
-	/*	Modal Popup
-	------------------------------------------------------*/
-    $('.item-wrap a').magnificPopup({
+  	/* Flexslider
+  	/*----------------------------------------------------*/
+  	$(window).load(function() {  		
 
-       type:'inline',
-       fixedContentPos: false,
-       removalDelay: 300,
-       showCloseBtn: false,
-       mainClass: 'mfp-fade'
+	  	$('#hero-slider').flexslider({
+	   	namespace: "flex-",
+	      controlsContainer: ".flex-container",
+	      animation: 'fade',
+	      controlNav: true,
+	      directionNav: false,
+	      smoothHeight: true,
+	      slideshowSpeed: 7000,
+	      animationSpeed: 600,
+	      randomize: false
+	   });	   
 
-    });
+   });
 
-    $(document).on('click', '.popup-modal-dismiss', function (e) {
-    		e.preventDefault();
-    		$.magnificPopup.close();
-    });
-
-
-   /*----------------------------------------------------*/
-	/*  Placeholder Plugin Settings
-	------------------------------------------------------ */  	 
-	$('input, textarea').placeholder()  
-
-   
+ 
 	/*----------------------------------------------------*/
 	/*	contact form
 	------------------------------------------------------*/
 
-	/* local validation */
-	$('#contactForm').validate({
+   $('form#contactForm button.submit').on('click', function() {
 
-		/* submit via ajax */
-		submitHandler: function(form) {
+      $('#image-loader').fadeIn();
 
-			var sLoader = $('#submit-loader');
+      var contactFname = $('#contactForm #contactFname').val();
+      var contactLname = $('#contactForm #contactLname').val();
+      var contactEmail = $('#contactForm #contactEmail').val();
+      var contactSubject = $('#contactForm #contactSubject').val();
+      var contactMessage = $('#contactForm #contactMessage').val();
 
-			$.ajax({      	
+      var data = 'contactFname=' + contactFname  + '&contactLname=' + contactLname + 
+                 '&contactEmail=' + contactEmail + '&contactSubject=' + contactSubject + 
+                 '&contactMessage=' + contactMessage;
 
-		      type: "POST",
-		      url: "inc/sendEmail.php",
-		      data: $(form).serialize(),
-		      beforeSend: function() { 
+      $.ajax({
 
-		      	sLoader.fadeIn(); 
+	      type: "POST",
+	      url: "inc/sendEmail.php",
+	      data: data,
+	      success: function(msg) {
 
-		      },
-		      success: function(msg) {
+            // Message was sent
+            if (msg == 'OK') {
+               $('#image-loader').fadeOut();
+               $('#message-warning').hide();
+               $('#contactForm').fadeOut();
+               $('#message-success').fadeIn();   
+            }
+            // There was an error
+            else {
+               $('#image-loader').fadeOut();
+               $('#message-warning').html(msg);
+	            $('#message-warning').fadeIn();
+            }
 
-	            // Message was sent
-	            if (msg == 'OK') {
-	            	sLoader.fadeOut(); 
-	               $('#message-warning').hide();
-	               $('#contactForm').fadeOut();
-	               $('#message-success').fadeIn();   
-	            }
-	            // There was an error
-	            else {
-	            	sLoader.fadeOut(); 
-	               $('#message-warning').html(msg);
-		            $('#message-warning').fadeIn();
-	            }
+	      }
 
-		      },
-		      error: function() {
+      });
+      return false;
+   });
 
-		      	sLoader.fadeOut(); 
-		      	$('#message-warning').html("Something went wrong. Please try again.");
-		         $('#message-warning').fadeIn();
 
-		      }
+	/*-----------------------------------------------------*/
+  	/* Back to top
+   ------------------------------------------------------ */ 
+	var pxShow = 300; // height on which the button will show
+	var fadeInTime = 400; // how slow/fast you want the button to show
+	var fadeOutTime = 400; // how slow/fast you want the button to hide
+	var scrollSpeed = 300; // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
 
-	      });     		
-  		}
+   // Show or hide the sticky footer button
+	jQuery(window).scroll(function() {
 
-	});
-	
+		if (jQuery(window).scrollTop() >= pxShow) {
+			jQuery("#go-top").fadeIn(fadeInTime);
+		} else {
+			jQuery("#go-top").fadeOut(fadeOutTime);
+		}
+
+	}); 
+
 
 })(jQuery);

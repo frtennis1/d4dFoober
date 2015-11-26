@@ -2,14 +2,37 @@
 
 {% block title %} Log In {% endblock title %}
 
-{% block content %}
+{% block header %}
+<section id="hero">	
+   	  
+		<div class="row hero-content">
 
-<form action="/login/" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit" />
-</form>
+			<div class="twelve columns flex-container">
 
-<p>Don't have an account yet? Click <a href="/register/">here</a> to register!</p>
+			   <div id="hero-slider" class="flexslider">
 
+				   <ul class="slides">
+
+					   <!-- Slide -->
+					   <li>
+						   <div class="flex-caption">
+								<form action="/login/" method="post">
+								{% csrf_token %}
+								{{ form }}
+								<input type="submit" value="Submit" />
+								</form>
+
+								<h2>Don't have an account yet? Click <a href="/register/">here</a> to register!</h2>
+							</div>						
+					   </li>		              
+
+				   </ul>
+
+			   </div> <!-- .flexslider -->				   
+
+	      </div> <!-- .flex-container -->      
+
+		</div> <!-- .hero-content -->	   
+
+    </section> <!-- #hero -->
 {% endblock %}

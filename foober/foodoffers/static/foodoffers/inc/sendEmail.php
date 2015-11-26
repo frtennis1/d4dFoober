@@ -1,19 +1,24 @@
 ﻿<?php
 
 // Replace this with your own email address
-$siteOwnersEmail = 'frivera@college.harvard.edu';
+$siteOwnersEmail = 'user@website.com';
 
 
 if($_POST) {
 
-   $name = trim(stripslashes($_POST['contactName']));
+   $fname = trim(stripslashes($_POST['contactFname']));
+   $lname = trim(stripslashes($_POST['contactLname']));
    $email = trim(stripslashes($_POST['contactEmail']));
    $subject = trim(stripslashes($_POST['contactSubject']));
    $contact_message = trim(stripslashes($_POST['contactMessage']));
 
-   // Check Name
-	if (strlen($name) < 2) {
-		$error['name'] = "Please enter your name.";
+   // Check First Name
+	if (strlen($fname) < 2) {
+		$error['fname'] = "Please enter your first name.";
+	}
+	// Check Last Name
+	if (strlen($lname) < 2) {
+		$error['lname'] = "Please enter your last name.";
 	}
 	// Check Email
 	if (!preg_match('/^[a-z0-9&\'\.\-_\+]+@[a-z0-9\-]+\.([a-z0-9\-]+\.)*+[a-z]{2}/is', $email)) {
@@ -26,6 +31,8 @@ if($_POST) {
    // Subject
 	if ($subject == '') { $subject = "Contact Form Submission"; }
 
+	// Set Name
+	$name = $fname . " " . $lname;
 
    // Set Message
    $message .= "Email from: " . $name . "<br />";
@@ -56,7 +63,8 @@ if($_POST) {
 
 	else {
 
-		$response = (isset($error['name'])) ? $error['name'] . "<br /> \n" : null;
+		$response = (isset($error['fname'])) ? $error['fname'] . "<br /> \n" : null;
+		$response .= (isset($error['lname'])) ? $error['lname'] . "<br /> \n" : null;
 		$response .= (isset($error['email'])) ? $error['email'] . "<br /> \n" : null;
 		$response .= (isset($error['message'])) ? $error['message'] . "<br />" : null;
 		

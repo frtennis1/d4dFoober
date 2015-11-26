@@ -2,22 +2,124 @@
 
 {% block title %} Register {% endblock title %}
 
-{% block content %}
+{% block header %}
+<section id="hero"> 
+      
+        <div class="row hero-content">
 
-<form action="/register/" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {% for field in form %}
-    <div class="fieldWrapper">
-        {{ field.errors }}
-        {{ field.label_tag }} {{ field }}
-        {% if field.help_text %}
-        <p class="help">{{ field.help_text|safe }}</p>
-        {% endif %}
-    </div>
-    {% endfor %}
-    <input type="submit" value="Submit" />
-</form>
+            <div class="twelve columns flex-container">
 
-<p>Already have an account? Click <a href="/login/">here</a> to log in!</p>
+               <div id="hero-slider" class="flexslider">
 
+                   <ul class="slides">
+
+                       <!-- Slide -->
+                       <li>
+                           <div class="flex-caption">
+                                <form action="/register/" method="post" enctype="multipart/form-data">
+        
+                                <fieldset>
+                                    {% csrf_token %}
+                                    {% for field in form %}
+                                    <div class="fieldwrap">
+                                        {{ field.errors }}
+                                        <label for="regularInput">{{ field.label_tag }}</label> 
+                                        {{ field }}
+                                        
+                                        {% if field.help_text %}
+                                        <p class="help">{{ field.help_text|safe }}</p>
+                                        {% endif %}
+                                    </div>
+                                    {% endfor %}
+                                    <input type="submit" value="Submit" />
+                                </fieldset>
+                            </form>
+                            <h2>Already have an account? Click <a href="/login/">here</a> to log in!</h2>
+                            </div>                      
+                       </li>                      
+
+                   </ul>
+
+               </div> <!-- .flexslider -->                 
+
+          </div> <!-- .flex-container -->      
+
+        </div> <!-- .hero-content -->      
+
+    </section> <!-- #hero -->
 {% endblock %}
+
+
+
+
+    <section id="content">
+    
+    <div class="respond">
+
+    <!-- form -->
+    <form action="/register/" method="post" enctype="multipart/form-data">
+        
+        <fieldset>
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="fieldwrap">
+                {{ field.errors }}
+                <label for="regularInput">{{ field.label_tag }}</label> 
+                {{ field }}
+                
+                {% if field.help_text %}
+                <p class="help">{{ field.help_text|safe }}</p>
+                {% endif %}
+            </div>
+            {% endfor %}
+            <input type="submit" value="Submit" />
+        </fieldset>
+    </form>
+    <p>Already have an account? Click <a href="/login/">here</a> to log in!</p>
+    </div>
+</section>
+
+<section id="hero"> 
+      
+        <div class="row hero-content">
+
+            <div class="twelve columns flex-container">
+
+               <div id="hero-slider" class="flexslider">
+
+                   <ul class="slides">
+
+                       <!-- Slide -->
+                       <li>
+                           <div class="flex-caption">
+                                <form action="/register/" method="post" enctype="multipart/form-data">
+        
+                                <fieldset>
+                                    {% csrf_token %}
+                                    {% for field in form %}
+                                    <div class="fieldwrap">
+                                        {{ field.errors }}
+                                        <label for="regularInput">{{ field.label_tag }}</label> 
+                                        {{ field }}
+                                        
+                                        {% if field.help_text %}
+                                        <p class="help">{{ field.help_text|safe }}</p>
+                                        {% endif %}
+                                    </div>
+                                    {% endfor %}
+                                    <input type="submit" value="Submit" />
+                                </fieldset>
+                            </form>
+                            <h2>Already have an account? Click <a href="/login/">here</a> to log in!</h2>
+                            </div>                      
+                       </li>                      
+
+                   </ul>
+
+               </div> <!-- .flexslider -->                 
+
+          </div> <!-- .flex-container -->      
+
+        </div> <!-- .hero-content -->      
+
+    </section> <!-- #hero -->

@@ -1,15 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %} Searching for food {% endblock %}
+{% block title %} Search {% endblock %}
+
+{% include 'nav_logged.html' %}
+
+{% block page %} Offers {% endblock %}
 
 {% block content %}
+<section id="content">
 
-<h1> Melissa can't search for food.</h1>
+	{% for offer in offer_list %}
 
-{% for offer in offer_list %}
+		{% include "short_offer.html" %}
 
-{% include "short_offer.html" %}
-
-{% endfor %}
-
+	{% endfor %}
+</section>
 {% endblock %}
