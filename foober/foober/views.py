@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login
 
 from forms import *
 
-#if not request.user.is_authenticated():
+# if not request.user.is_authenticated():
 #     return HttpResponseRedirect('/register/')
 
 def populate_home_page(request):
