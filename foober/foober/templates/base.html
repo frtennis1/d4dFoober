@@ -26,7 +26,7 @@
     <link href="{% static 'foodoffers/css/main.css' %}" rel="stylesheet">
 	
 	<!-- script================================================== -->
-    <script src{% static 'foodoffers/js/modernizr.js' %}"></script>
+    <script src="{% static 'foodoffers/js/modernizr.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'foodoffers/style.css' %}" />
 </head>
 <body>
@@ -36,7 +36,7 @@
 <header id="main-header">
 	<div class="row">
 		<div class="logo">
-			<a href="index.html">Foober</a>
+			<a href="/">Foober</a>
 		</div>
 		<nav id="nav-wrap">
 			<a class="mobile-btn" href="#nav-wrap" title=
@@ -45,7 +45,7 @@
 			"Hide navigation"><span class="menu-icon">Menu</span></a>
 			<ul class="nav" id="nav">
 				<li>
-					<a class="smoothscroll" href="#hero">Home.</a>
+					<a class="smoothscroll" href="/">Home.</a>
 				</li>
 				<li class="current">
 					<a class="smoothscroll" href="#portfolio">Works.</a>
@@ -63,7 +63,7 @@
 		</nav><!-- end #nav-wrap -->
 		<ul class="header-social">
 			<li>
-				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="https://www.facebook.com/melissa.yu.5099"><i class="fa fa-facebook"></i></a>
 			</li>
 			<li>
 				<a href="#"><i class="fa fa-twitter"></i></a>
@@ -73,7 +73,8 @@
 			</li>
 		</ul>
 	</div>
-</header><!-- end header -->
+</header>
+<!-- end header -->
 {% endblock %}
 
 {% block content %}
@@ -87,7 +88,7 @@
 		<div class="twelve columns content group">
 			<ul class="social-links">
 				<li>
-					<a href="#"><i class="fa fa-facebook-square"></i></a>
+					<a href="https://www.facebook.com/melissa.yu.5099"><i class="fa fa-facebook-square"></i></a>
 				</li>
 				<li>
 					<a href="#"><i class="fa fa-twitter-square"></i></a>
@@ -119,7 +120,7 @@
 			</div>
 		</div>
 		<ul class="copyright">
-			<li>&copy; Copyright 2015 KREO.</li>
+			<li>&copy; Copyright 2015 foober.</li>
 			<li>Design by <a href=
 			"http://www.styleshout.com/">Styleshout.</a>.
 			</li>
