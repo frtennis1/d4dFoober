@@ -25,6 +25,7 @@
     p. Contact Section
     q. Blog Entry
     r. Portfolio Entry
+    s. Login & Register Sections
 
 /* =================================================================== */
 
@@ -239,9 +240,9 @@ img.pull-left {
 /* =================================================================== */
 form {
 	margin-bottom: 24px;
-	text-align: center;
+	/*text-align: center;
 	margin: 0 auto;
-	width:250px;
+	width:250px;*/
 }
 fieldset {
 	margin: 0 0 24px 0;
@@ -580,7 +581,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 /* Alert Boxes
 /* ------------------------------------------------------------------ */
 .alert-box {
-	padding: 21px 40px 21px 30px;
+	padding: 10px 40px 10px 30px;
 	position: relative;
 	margin-bottom: 24px;
 	border-radius: 3px;
@@ -719,9 +720,9 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 .stats-tabs li {
 	display: inline-block;
-	margin: 0 10px 18px 0;
-	padding: 0 10px 0 0;
-	border-right: 1px solid #ccc;
+	margin: 0 10px 0 0;
+	padding: 0 20px 0 0;
+	border-right: 1px solid #7e7e7e;
 }
 .stats-tabs li:last-child {
 	margin: 0;
@@ -2008,4 +2009,271 @@ hr {
 }
 .more-projects .portfolio-wrapper {
 	text-align: left;
+}
+
+/* 
+/*  s. Login Section
+/* =================================================================== */
+#login {
+	background: #12151b url(../images/hero3.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	background-size: cover !important;
+	padding-top: 102px;
+	padding-bottom: 90px;
+	width: 100%;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+#login .row {
+	max-width: 392px;
+	text-align: center;
+}
+#login h1 {
+	color: white;
+}
+#login h3 {
+	color: white;
+}
+
+/* login form */
+#login form {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+#login label {
+	font: 14px/30px "raleway-heavy", sans-serif;
+	color: #7d7e80;
+	display: none;
+}
+#login label span {
+	color: #f26522;
+	display: inline-block;
+}
+#login input, 
+#login textarea, 
+#login select {
+	padding: 18px 20px;
+	margin-bottom: 42px;
+	font-size: 15px;
+	width: 100%;
+	background: #12151b;
+	border: 3px solid #575859;
+}
+#login textarea {
+	height: 252px;
+}
+#login input:focus, 
+#login textarea:focus, 
+#login select:focus {
+	color: white;
+	border-color: white;
+}
+#login button.submit {
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	padding: 18px 20px;
+	margin-bottom: 36px;
+	line-height: 24px;
+	display: block;
+	border: 3px solid #f26522;
+	color: white;
+	background: #f26522;
+}
+#login button.submit:hover {
+	color: white;
+	background: transparent;
+}
+#login .field_error input { 
+	background: #D3D3D3;
+}
+/* for ie9 and lower */
+.ie #login label {
+	display: block;
+}
+.ie #login input, .ie #login select {
+	margin-bottom: 6px;
+}
+.ie #login textarea {
+	margin-bottom: 48px;
+}
+
+/* messages */
+#message-warning, #message-success {
+	display: none;
+	background: black;
+	padding: 24px 24px;
+	margin-bottom: 42px;
+	border-radius: 3px;
+}
+#message-warning {
+	color: #ff6163;
+}
+#message-success {
+	color: #ffd900;
+}
+#message-warning i, #message-success i {
+	margin-right: 10px;
+}
+#image-loader {
+	display: none;
+	text-align: center;
+}
+#image-loader img {
+	height: 44px;
+	width: 44px;
+}
+
+/* Style Placeholder Text */
+::-webkit-input-placeholder {
+	color: #575859;
+}
+:-moz-placeholder {
+	/* Firefox 18- */
+	color: #575859;
+}
+::-moz-placeholder {
+	/* Firefox 19+ */
+	color: #575859;
+}
+:-ms-input-placeholder {
+	color: #575859;
+}
+.placeholder {
+	color: #575859 !important;
+}
+
+/* 
+/*  s. Register Section
+/* =================================================================== */
+#register {
+	background: #12151b url(../images/hero3.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	background-size: cover !important;
+	padding-top: 102px;
+	padding-bottom: 90px;
+	width: 100%;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+#register .row {
+	max-width: 784px;
+	text-align: center;
+}
+#register h1 {
+	color: white;
+}
+#register h3 {
+	color: white;
+}
+
+/* register form */
+#register form {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+#register label {
+	font: 14px/30px "raleway-heavy", sans-serif;
+	color: #7d7e80;
+	display: none;
+}
+#register label span {
+	color: #f26522;
+	display: inline-block;
+}
+#register input, 
+#register textarea, 
+#register select {
+	padding: 18px 20px;
+	margin-bottom: 24px;
+	font-size: 15px;
+	width: 100%;
+	background: #12151b;
+	border: 3px solid #575859;
+}
+#register textarea {
+	height: 252px;
+}
+#register input:focus, 
+#register textarea:focus, 
+#register select:focus {
+	color: white;
+	border-color: white;
+}
+#register button.submit {
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	padding: 18px 20px;
+	margin-bottom: 36px;
+	line-height: 24px;
+	display: block;
+	border: 3px solid #f26522;
+	color: white;
+	background: #f26522;
+}
+#register button.submit:hover {
+	color: white;
+	background: transparent;
+}
+#register .field_error input { 
+	background: #D3D3D3;
+}
+
+/* for ie9 and lower */
+.ie #register label {
+	display: block;
+}
+.ie #register input, .ie #register select {
+	margin-bottom: 6px;
+}
+.ie #register textarea {
+	margin-bottom: 48px;
+}
+
+/* messages */
+#message-warning, #message-success {
+	display: none;
+	background: black;
+	padding: 24px 24px;
+	margin-bottom: 42px;
+	border-radius: 3px;
+}
+#message-warning {
+	color: #ff6163;
+}
+#message-success {
+	color: #ffd900;
+}
+#message-warning i, #message-success i {
+	margin-right: 10px;
+}
+#image-loader {
+	display: none;
+	text-align: center;
+}
+#image-loader img {
+	height: 44px;
+	width: 44px;
+}
+
+/* Style Placeholder Text */
+::-webkit-input-placeholder {
+	color: #575859;
+}
+:-moz-placeholder {
+	/* Firefox 18- */
+	color: #575859;
+}
+::-moz-placeholder {
+	/* Firefox 19+ */
+	color: #575859;
+}
+:-ms-input-placeholder {
+	color: #575859;
+}
+.placeholder {
+	color: #575859 !important;
 }

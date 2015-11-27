@@ -1,33 +1,15 @@
-{% extends "base.html" %}
+{% extends "base_account.html" %}
 
 {% block title %} Thanks! {% endblock title %}
 
-{% block header %}
-	<section id="hero">	
-   	  
-		<div class="row hero-content">
+{% block section %}register{% endblock %}
 
-			<div class="twelve columns flex-container">
+{% block page_title %}Thanks{% endblock %}
 
-			   <div id="hero-slider" class="flexslider">
+{% block rec %} 
+  Thanks for registering on our site! Your account will be ready to use as soon as you confirm your account through email.
+{% endblock %}
 
-				   <ul class="slides">
-
-					   <!-- Slide -->
-					   <li>
-						   <div class="flex-caption">
-								<h1>Thanks for registering on our site! Your account will be ready to use as soon as you confirm your account through email.</h1>	
-								<p><a class="button stroke smoothscroll" href="/#hero">Return Home</a></p>																   
-							</div>						
-					   </li>		              
-
-				   </ul>
-
-			   </div> <!-- .flexslider -->				   
-
-	      </div> <!-- .flex-container -->      
-
-		</div> <!-- .hero-content -->	   
-
-    </section> <!-- #hero -->
+{% block form %}
+	<p><a class="button stroke smoothscroll" href="/#hero">Return Home</a></p>
 {% endblock %}

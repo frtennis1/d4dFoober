@@ -2,21 +2,45 @@
 
 {% block title %} Offer {% endblock %}
 
-{% block page %} {{ offer.user.username }} wants to share a meal with you! {% endblock %}
+{% block navigation %}
+	{% include 'nav_logged.html' %}
+{% endblock %}
+
+{% block page_title %}{{ offer.user.username }} wants to share a meal with you{% endblock %}
 
 {% block content %}
-<section id="content">
-	<!--This template is the one that should offer the comprehensive description of an offer of food-->
+<section id="services">
+   	<div class="row section-head">
+   		<div class="twelve columns">
+	         <h1>Your host: {{ offer.user.username }}<span>.</span></h1>
+	         <hr>
+         </div>
+      </div>
+      <div class="row">
+      	<div class="twelve columns">
+	      	<div class="service-list bgrid-third s-bgrid-half mob-bgrid-whole">
+	      		<div class="bgrid">
+	               	<h3>What's on the menu:</h3>
+	               	<div class="service-content">	                  
+		               	<p>{{ offer.description }}</p> 
+	               	</div>      
+	            </div> <!-- /bgrid -->
 
-	<p> Username of peep who wants to give you food: {{ offer.user.username }} <br>
+				<div class="bgrid">
+	               	<h3>When?</h3>                  
+	               	<div class="service-content">	                  
+		               	<p>{{ offer.offer_datetime|date:'b j, Y: P'}}</p> 
+	              	</div>                                 
+	            </div> <!-- /bgrid -->
 
-	Here's a description of what we wants to give you: {{ offer.description }} <br>
-
-	Here's how much he wants to charge you: ${{ offer.price }} <br>
-
-	Here's when he wants to give it to you: {{ offer.offer_datetime }} <br>
-	<!--Melissa, keep in mind that the date isn't formatted there, so just lookup how to format it, it shouldn't be that difficult. -Francisco -->
-
-	</p>
-</section>
-{% endblock %}
+			   	<div class="bgrid">
+	               	<h3>Price:</h3>
+	               	<div class="service-content">		                  
+		               	<p>${{ offer.price }}</p> 
+	               	</div>                               
+	            </div> <!-- /bgrid -->
+	      	</div> <!-- /service-list -->
+	      </div> <!-- /twelve -->
+      </div> <!-- /row -->      
+   </section> <!-- /services --> 
+{% endblock %}  

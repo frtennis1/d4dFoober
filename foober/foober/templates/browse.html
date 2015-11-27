@@ -2,17 +2,24 @@
 
 {% block title %} Search {% endblock %}
 
-{% include 'nav_logged.html' %}
+{% block navigation %}
+	{% include 'nav_logged.html' %}
+{% endblock %}
 
-{% block page %} Offers {% endblock %}
+{% block page_title %}Browse Offers{% endblock %}
 
 {% block content %}
 <section id="content">
-
-	{% for offer in offer_list %}
-
-		{% include "short_offer.html" %}
-
-	{% endfor %}
+	<div class="row">
+		<div class="tab-whole nine columns">
+			{% for offer in offer_list %}
+				<a href="/browse/{{forloop.counter}}">
+					<div class="alert-box notice hideit">
+						<p>{% include "short_offer.html" %}</p>
+					</div><!-- /notice -->
+				</a>
+			{% endfor %}
+		</div>
+	</div>
 </section>
 {% endblock %}

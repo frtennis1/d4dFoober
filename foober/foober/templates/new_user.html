@@ -1,125 +1,33 @@
-{% extends "base.html" %}
+{% extends "base_account.html" %}
 
-{% block title %} Register {% endblock title %}
+{% block title %} Register {% endblock %}
 
-{% block header %}
-<section id="hero"> 
-      
-        <div class="row hero-content">
+{% block section %}register{% endblock %}
 
-            <div class="twelve columns flex-container">
+{% block page_title %} Register {% endblock %}
 
-               <div id="hero-slider" class="flexslider">
-
-                   <ul class="slides">
-
-                       <!-- Slide -->
-                       <li>
-                           <div class="flex-caption">
-                                <form action="/register/" method="post" enctype="multipart/form-data">
-        
-                                <fieldset>
-                                    {% csrf_token %}
-                                    {% for field in form %}
-                                    <div class="fieldwrap">
-                                        {{ field.errors }}
-                                        <label for="regularInput">{{ field.label_tag }}</label> 
-                                        {{ field }}
-                                        
-                                        {% if field.help_text %}
-                                        <p class="help">{{ field.help_text|safe }}</p>
-                                        {% endif %}
-                                    </div>
-                                    {% endfor %}
-                                    <input type="submit" value="Submit" />
-                                </fieldset>
-                            </form>
-                            <h2>Already have an account? Click <a href="/login/">here</a> to log in!</h2>
-                            </div>                      
-                       </li>                      
-
-                   </ul>
-
-               </div> <!-- .flexslider -->                 
-
-          </div> <!-- .flex-container -->      
-
-        </div> <!-- .hero-content -->      
-
-    </section> <!-- #hero -->
+{% block rec %} 
+  Already have an account? Click <a href="/login/">here</a> to log in!
 {% endblock %}
 
-
-
-
-    <section id="content">
-    
-    <div class="respond">
-
-    <!-- form -->
-    <form action="/register/" method="post" enctype="multipart/form-data">
-        
-        <fieldset>
-            {% csrf_token %}
-            {% for field in form %}
-            <div class="fieldwrap">
-                {{ field.errors }}
-                <label for="regularInput">{{ field.label_tag }}</label> 
-                {{ field }}
-                
-                {% if field.help_text %}
-                <p class="help">{{ field.help_text|safe }}</p>
-                {% endif %}
+{% block form %}
+  <form name="LogIn" id="LogIn" method="post" action="/register/" enctype="multipart/form-data">
+    <fieldset>
+        {% csrf_token %}
+        <div class="row">
+        {% for field in form %}
+            <div class="six columns mob-whole">
+                <div class="field {% if field.errors %} field_error {% endif %}">
+                    {{ field }} 
+                </div>
             </div>
-            {% endfor %}
-            <input type="submit" value="Submit" />
-        </fieldset>
-    </form>
-    <p>Already have an account? Click <a href="/login/">here</a> to log in!</p>
-    </div>
-</section>
+            {% if forloop.counter|divisibleby:"2" %}</div><div class="row">{% endif %}
+        {% endfor %}
+        </div>
 
-<section id="hero"> 
-      
-        <div class="row hero-content">
-
-            <div class="twelve columns flex-container">
-
-               <div id="hero-slider" class="flexslider">
-
-                   <ul class="slides">
-
-                       <!-- Slide -->
-                       <li>
-                           <div class="flex-caption">
-                                <form action="/register/" method="post" enctype="multipart/form-data">
-        
-                                <fieldset>
-                                    {% csrf_token %}
-                                    {% for field in form %}
-                                    <div class="fieldwrap">
-                                        {{ field.errors }}
-                                        <label for="regularInput">{{ field.label_tag }}</label> 
-                                        {{ field }}
-                                        
-                                        {% if field.help_text %}
-                                        <p class="help">{{ field.help_text|safe }}</p>
-                                        {% endif %}
-                                    </div>
-                                    {% endfor %}
-                                    <input type="submit" value="Submit" />
-                                </fieldset>
-                            </form>
-                            <h2>Already have an account? Click <a href="/login/">here</a> to log in!</h2>
-                            </div>                      
-                       </li>                      
-
-                   </ul>
-
-               </div> <!-- .flexslider -->                 
-
-          </div> <!-- .flex-container -->      
-
-        </div> <!-- .hero-content -->      
-
-    </section> <!-- #hero -->
+        <div>
+            <button class="submit full-width">Register</button>
+        </div>
+    </fieldset>
+  </form><!-- Register Form -->
+{% endblock %}

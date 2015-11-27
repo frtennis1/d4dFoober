@@ -60,11 +60,11 @@
          	</a>         
 
 	        <ul id="nav" class="nav">
-	            <li class="current"><a class="smoothscroll" href="/#hero">Home.</a></li>
-		          {% block navigation %}
-              <li><a class="smoothscroll" href="/register/">Sign Up.</a></li>             
-              <li><a class="smoothscroll" href="/login/">Log In.</a></li>
-              {% endblock %}
+				<li class="current"><a class="smoothscroll" href="/#hero">Home.</a></li>
+				{% block navigation %}
+					<li><a class="smoothscroll" href="/register/">Sign Up.</a></li>             
+					<li><a class="smoothscroll" href="/login/">Log In.</a></li>
+				{% endblock %}
 	        </ul> 
 
 	      	</nav> <!-- /nav-wrap -->	      
@@ -82,7 +82,7 @@
 
         <div class="twelve columns">
 
-          <h1>{% block page %}{% endblock %}<span>.</span></h1>
+          <h1>{% block page_title %}{% endblock %}<span>.</span></h1>
 
         </div>          
 
