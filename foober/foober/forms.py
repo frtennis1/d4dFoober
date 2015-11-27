@@ -4,10 +4,15 @@ from foodoffers.models import *
 from django.core.exceptions import ValidationError
 
 class NewUser(forms.Form):
-    username = forms.CharField(label='Desired username', max_length=30) # make sure to later check that this is new
-    first_name = forms.CharField(label='Your first name', max_length=30)
-    last_name = forms.CharField(label='Your last name', max_length=30)
-    email = forms.EmailField(label='Your e-mail')
+    
+    first_name = forms.CharField(label='First Name', max_length=30,
+        widget=forms.TextInput(attrs={'placeholder': 'First Name'}))
+    last_name = forms.CharField(label='Last Name', max_length=30,
+        widget=forms.TextInput(attrs={'placeholder': 'Last Name'}))
+    username = forms.CharField(label='Desired username', max_length=30,
+        widget=forms.TextInput(attrs={'placeholder': 'Username'})) # make sure to later check that this is new
+    email = forms.EmailField(label='Your e-mail', 
+        widget=forms.TextInput(attrs={'placeholder': 'Email'}))
     password = forms.CharField(max_length=32, widget=forms.PasswordInput())
     confirm = forms.CharField(max_length=32, widget=forms.PasswordInput())
     zip_code = lfforms.USZipCodeField()
@@ -30,8 +35,9 @@ class NewUser(forms.Form):
 #    
 
 class LogIn(forms.Form):
-    username = forms.CharField(label='Your username', max_length=30)
-    password = forms.CharField(max_length=32, widget=forms.PasswordInput())
+    username = forms.CharField(label='Username', max_length=30, 
+        widget=forms.TextInput(attrs={'placeholder': 'Username'}))
+    password = forms.CharField(max_length=32, widget=(forms.PasswordInput()))
 
 class Offer(forms.Form):
     address = forms.CharField(label='Enter the address at which the food will be served',
