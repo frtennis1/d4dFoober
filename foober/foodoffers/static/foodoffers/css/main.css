@@ -22,7 +22,7 @@
     m. Services Section
     n. About Section
     o. Journal Section
-    p. Contact Section
+    p. search Section
     q. Blog Entry
     r. Portfolio Entry
     s. Login & Register Sections
@@ -1286,8 +1286,8 @@ hr {
 	-webkit-background-size: cover !important;
 	-moz-background-size: cover !important;
 	background-size: cover !important;
-	padding-top: 66px;
-	padding-bottom: 90px;
+	padding-top: 86px;
+	padding-bottom: 0;
 	width: 100%;
 	text-align: center;
 	position: relative;
@@ -1392,7 +1392,7 @@ hr {
 	border-color: #9a9103;
 }
 #hero-slider .flex-caption .button.stroke {
-	margin: 0;
+	margin-bottom: 142px;
 	padding: 9px 20px;
 	width: auto;
 	text-transform: uppercase;
@@ -1455,6 +1455,7 @@ hr {
 #portfolio {
 	background: white;
 	padding-top: 120px;
+	padding-bottom: 86px;
 }
 .ie #portfolio .row.items {
 	width: 1140px;
@@ -1518,7 +1519,7 @@ hr {
 }
 .item .item-wrap .portfolio-item-meta h5 {
 	font: 15px/21px "raleway-heavy", sans-serif;
-	margin: 0;
+	margin: 24;
 	color: white;
 	word-wrap: break-word;
 }
@@ -1723,78 +1724,78 @@ hr {
 
 
 /* 
-/*  p. Contact Section
+/*  p. Search Section
 /* =================================================================== */
-#contact {
-	background: #12151b;
-	padding-top: 120px;
-	padding-bottom: 102px;
+#search {
+	background: rgba(18, 21, 27, 0.5);
+	padding-top: 0;
+	padding-bottom: 0;
 	overflow: hidden;
 }
-#contact .row {
-	max-width: 784px;
+#search .row {
+	max-width: 900px;
 }
-#contact h1 {
+#search h1 {
 	color: white;
 }
 
-/* contact form */
-#contact form {
-	margin-top: 30px;
-	margin-bottom: 30px;
+/* search form */
+#search form {
+	margin-top: 22px;
+	margin-bottom: 0;
 }
-#contact label {
+#search label {
 	font: 14px/30px "raleway-heavy", sans-serif;
 	color: #7d7e80;
 	display: none;
 }
-#contact label span {
+#search label span {
 	color: #f26522;
 	display: inline-block;
 }
-#contact input, 
-#contact textarea, 
-#contact select {
-	padding: 18px 20px;
-	margin-bottom: 42px;
+#search input, 
+#search textarea, 
+#search select {
+	padding: 9px 10px;
+	margin-bottom: 0;
 	font-size: 15px;
 	width: 100%;
-	background: #12151b;
-	border: 3px solid #575859;
+	background: #D3D3D3;
+	border: 3px solid #D3D3D3;
 }
-#contact textarea {
+#search textarea {
 	height: 252px;
 }
-#contact input:focus, 
-#contact textarea:focus, 
-#contact select:focus {
+#search input:focus, 
+#search textarea:focus, 
+#search select:focus {
 	color: white;
 	border-color: white;
 }
-#contact button.submit {
+#search button.submit {
 	text-transform: uppercase;
 	letter-spacing: 3px;
-	padding: 18px 20px;
-	margin-bottom: 36px;
-	line-height: 24px;
+	padding: 12px 12px;
+	margin-bottom: 0;
+	line-height: 18px;
 	display: block;
 	border: 3px solid #f26522;
-	color: #f26522;
-	background: transparent;
-}
-#contact button.submit:hover {
 	color: white;
 	background: #f26522;
 }
+#search button.submit:hover {
+	color: #f26522;
+	background: transparent;
+}
 
 /* for ie9 and lower */
-.ie #contact label {
+.ie #search label {
 	display: block;
 }
-.ie #contact input, .ie #contact select {
+.ie #search input, .ie #search select {
 	margin-bottom: 6px;
 }
-.ie #contact textarea {
+.ie #search textarea {
 	margin-bottom: 48px;
 }
 

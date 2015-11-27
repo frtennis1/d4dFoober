@@ -2,10 +2,16 @@
 
 {% block title %} 404 - Not Found {% endblock %}
 
+<!-- {% block navigation %}
+	{% if {{logged_in}} %}
+		{% include 'nav_logged.html' %}
+	{% endif %}
+{% endblock %} -->
+
+{% block page_title %}404 Error.{% endblock %}
+
 {% block content %}
-
-<h1> 404. Melissa can't find this page. </h1>
-
-Sorry.
-
+	<h1>Oops, the page you're looking for can't be found!</h1>
 {% endblock %}
+
+

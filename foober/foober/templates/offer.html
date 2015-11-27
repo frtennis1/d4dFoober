@@ -11,9 +11,9 @@
 {% block content %}
 {% include "search.html" %}
 
-<section id="content">
+<section id="search">
 	<div class="row">
-		<div class="tab-whole twelve columns">
+		<div class="tab-whole nine columns">
 			{% for offer in offer_list %}
 				<a href="/browse/{{forloop.counter}}">
 					<div class="alert-box notice hideit">

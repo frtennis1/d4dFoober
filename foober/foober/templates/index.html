@@ -19,41 +19,19 @@
 
 			   <div id="hero-slider" class="flexslider">
 
-				   <ul class="slides">
+				   	<div class="flex-caption">
+						<h1>SHARE A MEAL.</h1>	
+						<h2>Enjoy a homecooked meal with a local host.</h2>
+						<p><a class="button stroke smoothscroll" href="#portfolio">How It Works</a></p>																   
+					</div>						
+					  
+			   	</div> <!-- .flexslider -->				   
 
-					   <!-- Slide -->
-					   <li>
-						   <div class="flex-caption">
-								<h1>SHARE A MEAL.</h1>	
-								<h2>Enjoy a homecooked meal with a local host.</h2>
-								<p><a class="button stroke smoothscroll" href="#portfolio">How It Works</a></p>																   
-							</div>						
-					   </li>
-
-					   <!-- Slide -->
-					   <!-- <li>						
-							<div class="flex-caption">
-								<h1 >We imagine, craft and manage your brand in this new digital world.</h1>	
-								<p><a class="button stroke smoothscroll" href="#portfolio">See Our Works</a></p>									   
-							</div>					
-					   </li> -->
-
-					   <!-- Slide -->
-					   <!-- <li>
-						   <div class="flex-caption">
-								<h1 >Take a look at some of <a class="smoothscroll" href="#portfolio" title="">our works</a> or <a class="smoothscroll" href="#contact" title="">contact us</a> to discuss how we can help you.</h1>
-								<p><a class="button stroke smoothscroll" href="#contact">Get In Touch</a></p>										   
-							</div>
-					   </li> -->					              
-
-				   </ul>
-
-			   </div> <!-- .flexslider -->				   
-
-	      </div> <!-- .flex-container -->      
+	      	</div> <!-- .flex-container -->      
 
 		</div> <!-- .hero-content -->	   
 
+		{% include "search.html" %}
     </section> <!-- #hero -->
 {% endblock %}
 
@@ -67,7 +45,7 @@
 
       	<div class="twelve columns">
 
-	         <h1>Homemade meals, easy<span>.</span></h1>
+	         <h1>Sharing meals made easy<span>.</span></h1>
 
 	         <hr />
 
@@ -84,67 +62,42 @@
 
       	<div class="twelve columns">
 
-            <div id="portfolio-wrapper" class="bgrid-fourth s-bgrid-third mob-bgrid-half group">
+            <div id="portfolio-wrapper" class="service-list bgrid-third s-bgrid-half mob-bgrid-whole">
 
-          	   <div class="bgrid item">
-                  <div class="item-wrap">
-
-                     <a href="/register/">
+          	    <div class="bgrid item">
+                  	<div class="item-wrap">
+                    <a href="/register/">
                         <img src="{% static 'foodoffers/images/hero3.jpg' %}" alt="Create An Account">
                         <div class="overlay"></div>                       
                         <div class="portfolio-item-meta">
-          					      <h5>Create An Account</h5>
-                              <p>blah blah blah</p>
-          					</div>                         
-                     </a>
-
-                  </div>
+          					<h5>1. Create An Account</h5>
+          				</div>                         
+                    </a>
+                  	</div>
           		</div> <!-- /item -->
 
-               <div class="bgrid item">
-                  <div class="item-wrap">
-
-                     <a href="/browse/">
+               	<div class="bgrid item">
+                  	<div class="item-wrap">
+                	<a href="/browse/">
                         <img src="{% static 'foodoffers/images/hero7.jpg' %}" alt="Browse Food">
-                        <div class="overlay">
-                        	<div class="portfolio-item-meta">
-          					      <h5>Browse Food</h5>
-                              <p>blah blah blah</p>
-          					   </div>
-                        </div>                        
-                     </a>
-
-                  </div>
-          		</div> <!-- /item -->
-
-               <div class="bgrid stack item">
-                  <div class="item-wrap">
-
-                     <a href="/offer/">
-                        <img src="{% static 'foodoffers/images/hero2.jpg' %}" alt="Offer Food">                        
-                        <div class="overlay">
-                        	<div class="portfolio-item-meta">
-          					      <h5>Offer Food</h5>
-                              <p>blah blah blah</p>
-          					   </div>
-                        </div>                        
-                     </a>
-
-                  </div>
-          		</div> <!-- /item -->
-
-               <div class="bgrid item">
-                  <div class="item-wrap">
-
-                    <img src="{% static 'foodoffers/images/hero1.jpg' %}" alt="Share A Meal">
-                    <div class="overlay">
+                        <div class="overlay"></div>  
                     	<div class="portfolio-item-meta">
-      					      <h5>Share A Meal</h5>
-                          <p>blah blah blah</p>
-      					   </div>
-                    </div>                       
+          					<h5>2. Browse Food Offers</h5>
+      					</div>
+                    </a>
+                  	</div>
+          		</div> <!-- /item -->
 
-                  </div>
+                <div class="bgrid item">
+                  	<div class="item-wrap">
+                	<a href="/offer/">
+                        <img src="{% static 'foodoffers/images/hero7.jpg' %}" alt="Share A Meal">
+                        <div class="overlay"></div>  
+                    	<div class="portfolio-item-meta">
+          					<h5>3. Share A Meal.</h5>
+      					</div>
+                    </a>
+                  	</div>
           		</div> <!-- /item -->
 
             </div> <!-- /portfolio-wrapper -->
@@ -153,81 +106,6 @@
 
       </div>  <!-- /row -->
       
-   </section> <!-- /Portfolio -->
-
-   <section id="services">
-
-   	<div class="row section-head">
-
-   		<div class="twelve columns">
-
-	         <h1>Homemade meals, easy [vs. 2]<span>.</span></h1>
-
-	         <hr />
-
-	         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-	         eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-	         voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	         </p>
-
-         </div>
-
-      </div>
-
-      <div class="row">
-
-      	<div class="twelve columns">
-
-	      	<div class="service-list bgrid-third s-bgrid-half mob-bgrid-whole">
-
-	      		<div class="bgrid">
-
-	               	<div class="icon-part">
-	               	<span class="icon-graph"></span>
-	               	</div>
-
-	               	<h3>Create An Account.</h3>
-	               	<div class="service-content">	                  
-		               	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
-	         			</p> 
-	               	</div>      
-
-	            </div> <!-- /bgrid -->
-
-				   	<div class="bgrid">
-
-	              	<div class="icon-part">
-	               	<i class="icon-film"></i>
-	               	</div>
-
-	               	<h3>Browse Food Offers.</h3>                  
-	               	<div class="service-content">	                  
-		               	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventoveritatis et quasi architecto beatae vitae dicta sunt explicabo.
-	         			</p> 
-	              	</div>                                 
-
-	            </div> <!-- /bgrid -->
-
-				   	<div class="bgrid">
-
-	              	<div class="icon-part">	               	
-	               	<i class="icon-camera"></i>
-	               	</div>
-
-	               	<h3>Share A Meal.</h3>
-	               	<div class="service-content">		                  
-		               	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
-	         			</p> 
-	               	</div>                               
-
-	             </div> <!-- /bgrid -->
-
-	      	</div> <!-- /service-list -->
-
-	      </div> <!-- /twelve -->
-
-      </div> <!-- /row -->      
-
-   </section> <!-- /services --> 
+   </section> <!-- /Portfolio --> 
 
    {% endblock %}
