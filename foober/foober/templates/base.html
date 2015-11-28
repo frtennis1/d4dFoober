@@ -55,7 +55,7 @@
          	</a>         
 
 	        <ul id="nav" class="nav">
-				<li class="current"><a class="smoothscroll" href="/">Home.</a></li>
+				<li class="current"><a class="smoothscroll" href="/#hero">Home.</a></li>
 				{% block navigation %}
 				<li><a class="smoothscroll" href="/register/">Sign Up.</a></li>             
 				<li><a class="smoothscroll" href="/login/">Log In.</a></li>
@@ -140,8 +140,16 @@
 
 	<!-- Java Script ================================================== 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	
-	<script src="{% static 'foodoffers/js/jquery-1.11.3.min.js' %}"></script>-->
+	<script src="{% static 'foodoffers/js/jquery-1.11.3.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'foodoffers/js/jquery-migrate-1.2.1.min.js' %}"></script>   
+	<script src="{% static 'foodoffers/js/jquery.flexslider.js' %}"></script>
+	<script src="{% static 'foodoffers/js/jquery.fittext.js' %}"></script>
+	<script src="{% static 'foodoffers/js/backstretch.js' %}"></script> 
+	<script src="{% static 'foodoffers/js/waypoints.js' %}"></script>  
+	<script src="{% static 'foodoffers/js/main.js' %}"></script> -->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="{% static 'foodoffers/js/jquery-1.11.3.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'foodoffers/js/jquery-migrate-1.2.1.min.js' %}"></script>   
 	<script src="{% static 'foodoffers/js/jquery.flexslider.js' %}"></script>
 	<script src="{% static 'foodoffers/js/jquery.fittext.js' %}"></script>
