@@ -31,7 +31,9 @@
 
 		</div> <!-- .hero-content -->	   
 
-		{% include "search.html" %}
+    {% block search %}
+        {% include "search.html" %}
+    {% endblock %}
     </section> <!-- #hero -->
 {% endblock %}
 
@@ -65,38 +67,38 @@
           	    <div class="bgrid item">
                   	<div class="item-wrap">
                     <a href="/register/">
-                        <img src="{% static 'foodoffers/images/hero3.jpg' %}" alt="Create An Account">
+                        <img src="{% static 'foodoffers/images/services1.jpg' %}" alt="Create An Account">
                         <div class="overlay"></div>                       
                         <div class="portfolio-item-meta">
-          					<h5>1. Create An Account</h5>
-          				</div>                         
+                            <h5>1. Create An Account</h5>
+                        </div>                         
                     </a>
                   	</div>
-          		</div> <!-- /item -->
+                </div> <!-- /item -->
 
                	<div class="bgrid item">
                   	<div class="item-wrap">
-                	<a href="/browse/">
-                        <img src="{% static 'foodoffers/images/hero7.jpg' %}" alt="Browse Food">
+                    <a href="/browse/">
+                        <img src="{% static 'foodoffers/images/services2.jpg' %}" alt="Browse Food">
                         <div class="overlay"></div>  
-                    	<div class="portfolio-item-meta">
-          					<h5>2. Browse Food Offers</h5>
-      					</div>
+                        <div class="portfolio-item-meta">
+                            <h5>2. Browse Food Offers</h5>
+                        </div>
                     </a>
                   	</div>
-          		</div> <!-- /item -->
+                </div> <!-- /item -->
 
                 <div class="bgrid item">
                   	<div class="item-wrap">
-                	<a href="/offer/">
-                        <img src="{% static 'foodoffers/images/hero8.jpg' %}" alt="Share A Meal">
+                    <a href="/offer/">
+                        <img src="{% static 'foodoffers/images/services3.jpg' %}" alt="Share A Meal">
                         <div class="overlay"></div>  
-                    	<div class="portfolio-item-meta">
-          					<h5>3. Share A Meal.</h5>
-      					</div>
+                        <div class="portfolio-item-meta">
+                            <h5>3. Share A Meal.</h5>
+                        </div>
                     </a>
                   	</div>
-          		</div> <!-- /item -->
+          		  </div> <!-- /item -->
 
             </div> <!-- /portfolio-wrapper -->
 
@@ -106,4 +108,4 @@
       
    </section> <!-- /Portfolio --> 
 
-   {% endblock %}
+{% endblock %}

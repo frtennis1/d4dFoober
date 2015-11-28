@@ -6,11 +6,15 @@
 	{% include 'nav_logged.html' %}
 {% endblock %}
 
-{% block page_title %}Browse Offers{% endblock %}
+{% block page_title %}
+	Browse Offers
+{% endblock %}
+
+{% block search %}
+	{% include "search.html" %}
+{% endblock %}
 
 {% block content %}
-{% include "search.html" %}
-
 <section id="content">
 	<div class="row">
 		<div class="tab-whole twelve columns">
