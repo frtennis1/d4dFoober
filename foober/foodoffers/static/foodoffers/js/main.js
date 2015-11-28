@@ -113,12 +113,13 @@
 
    	var target = this.hash,
     	$target = $(target);
-
+	if ($target.length) {
     	$('html, body').stop().animate({
        	'scrollTop': $target.offset().top
       }, 800, 'swing', function () {
       	window.location.hash = target;
       });
+	}
 
   	});
 
