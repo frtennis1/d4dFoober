@@ -4,30 +4,25 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html lang="en">
 <head>
-	<!--- Basic Page Needs
-   	================================================== -->
+	<!--- Basic Page Needs ================================================== -->
     <meta charset="utf-8">
     <title>foober | {% block title %}{% endblock %}</title>
     <meta name="description" content="">  
     <meta name="author" content="">
 
-    <!-- Mobile Specific Metas
-    ================================================== -->
+    <!-- Mobile Specific Metas ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- CSS
-    ================================================== -->
+    <!-- CSS ================================================== -->
     <link rel="stylesheet" href="{% static 'foodoffers/css/base.css' %}">
     <link rel="stylesheet" href="{% static 'foodoffers/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'foodoffers/css/media-queries.css' %}"> 
 
-    <!-- Script
-    =================================================== -->
+    <!-- Script =================================================== -->
     <script src="{% static 'foodoffers/js/modernizr.js' %}"></script>
 
-    <!-- Favicon
-    =================================================== -->
-    <link rel="shortcut icon" href="{% static 'foodoffers/images/favicon.png' %}">
+    <!-- Favicon =================================================== -->
+    <link rel="shortcut icon" href="{% static 'foodoffers/images/favicon.ico' %}">
 </head>
 <body>
 
@@ -45,7 +40,7 @@
    	<div class="row header-inner">
 
 		<div class="logo">
-	        <a class="smoothscroll" href="/#hero">Foober.</a>
+	        <a class="smoothscroll" href="/"></a>
 		</div>
 
 	    <nav id="nav-wrap">         
@@ -60,10 +55,10 @@
          	</a>         
 
 	        <ul id="nav" class="nav">
-				<li class="current"><a class="smoothscroll" href="/#hero">Home.</a></li>
+				<li class="current"><a class="smoothscroll" href="/">Home.</a></li>
 				{% block navigation %}
-					<li><a class="smoothscroll" href="/register/">Sign Up.</a></li>             
-					<li><a class="smoothscroll" href="/login/">Log In.</a></li>
+				<li><a class="smoothscroll" href="/register/">Sign Up.</a></li>             
+				<li><a class="smoothscroll" href="/login/">Log In.</a></li>
 				{% endblock %}
 	        </ul> 
 
@@ -92,22 +87,16 @@
 
   {% endblock %}
 
-	<!-- Content
-	================================================== -->
+	<!-- Content ================================================== -->
   {% block content %}{% endblock %}
 
-	<!-- Footer
-	================================================== -->
+	<!-- Footer ================================================== -->
 	{% block footer %}
 		<footer>
 			<div class="row">       
 				<div class="six columns tab-whole footer-about">
 				    <h3>About foober</h3>
-					<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-					Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-					nibh id elit.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>       
+					<p>We want to share our love of food.</p>
 				</div> <!-- /footer-about -->
 
 				<div class="six columns tab-whole right-cols">
@@ -118,8 +107,7 @@
 							<h3 class="address">Contact Us</h3>
 							<p>
 							Harvard University<br>
-							Cambridge, MA<br>
-							02138 US
+							Cambridge, MA 02138
 							</p>
 
 							<ul>
@@ -134,10 +122,7 @@
 							<ul>
 								<li><a href="#">Facebook</a></li>
 								<li><a href="#">Twitter</a></li>
-								<li><a href="#">GooglePlus</a></li>
 								<li><a href="#">Instagram</a></li>
-								<li><a href="#">Flickr</a></li>
-								<li><a href="#">Skype</a></li>
 							</ul>
 					    </div> <!-- /columns --> 
 					</div> <!-- /Row(nested) -->
@@ -155,7 +140,7 @@
 	<!-- Java Script
 	================================================== -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="{% static 'foodoffers/js/jquery-1.10.2.min.js' %}"><\/script>')</script>
+	<script src="{% static 'foodoffers/js/jquery-1.10.2.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'foodoffers/js/jquery-migrate-1.2.1.min.js' %}"></script>   
 	<script src="{% static 'foodoffers/js/jquery.flexslider.js' %}"></script>
 	<script src="{% static 'foodoffers/js/jquery.fittext.js' %}"></script>

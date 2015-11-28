@@ -13,9 +13,9 @@ class NewUser(forms.Form):
         widget=forms.TextInput(attrs={'placeholder': 'Username'})) # make sure to later check that this is new
     email = forms.EmailField(label='Your e-mail', 
         widget=forms.TextInput(attrs={'placeholder': 'Email'}))
-    password = forms.CharField(max_length=32, widget=forms.PasswordInput())
-    confirm = forms.CharField(max_length=32, widget=forms.PasswordInput())
-    zip_code = lfforms.USZipCodeField()
+    password = forms.CharField(max_length=32, widget=forms.PasswordInput(render_value=False, attrs={'placeholder': 'Password'}))
+    confirm = forms.CharField(max_length=32, widget=forms.PasswordInput(render_value=False, attrs={'placeholder': 'Confirm'}))
+    zip_code = lfforms.USZipCodeField(widget=forms.TextInput(attrs={'placeholder': 'Zip Code'}))
     prof_pic = forms.ImageField(max_length=300)
     
 #    def clean_username(self):

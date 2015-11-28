@@ -828,11 +828,11 @@ header .logo a {
 	font: 0/0 a;
 	text-shadow: none;
 	color: transparent;
-	width: 126px;
-	height: 12px;
+	width: 92px;
+	height: 35px;
 	background-repeat: no-repeat;
 	background-position: 0 0;
-	background-image: url("../images/logo.png");
+	background-image: url("../images/logo2.png");
 }
 @media (-webkit-min-device-pixel-ratio:2), (min-resolution:192dpi) {
 	header .logo a {
