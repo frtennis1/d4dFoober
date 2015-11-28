@@ -37,7 +37,7 @@ class NewUser(forms.Form):
 class LogIn(forms.Form):
     username = forms.CharField(label='Username', max_length=30, 
         widget=forms.TextInput(attrs={'placeholder': 'Username'}))
-    password = forms.CharField(max_length=32, widget=(forms.PasswordInput()))
+    password = forms.CharField(max_length=32, widget=(forms.PasswordInput(render_value=False, attrs={'placeholder': 'Password'})))
 
 class Offer(forms.Form):
     address = forms.CharField(label='Enter the address at which the food will be served',
