@@ -1283,6 +1283,7 @@ hr {
 /* =================================================================== */
 #hero {
 	background: #12151b url(../images/hero.jpg) no-repeat center center fixed;
+	/*slides for hero*/
 	-webkit-background-size: cover !important;
 	-moz-background-size: cover !important;
 	background-size: cover !important;
