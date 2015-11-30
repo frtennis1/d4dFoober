@@ -3,7 +3,10 @@
 {% block title %} Search {% endblock %}
 
 {% block navigation %}
-	{% include 'nav_logged.html' %}
+	<li><a href="/">Home.</a></li>
+	<li><a href="/offer/">Offer Food.</a></li>
+	<li class="current"><a href="/browse/">Browse Food.</a></li>
+	<li><a href="/logout/">Log out.</a></li>
 {% endblock %}
 
 {% block page_title %}

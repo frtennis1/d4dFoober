@@ -2,6 +2,12 @@
 
 {% block title %} Thanks! {% endblock title %}
 
+{% block navigation %}
+	<li><a href="/">Home.</a></li>
+	<li class="current"><a href="/register/">Sign Up.</a></li>             
+	<li><a href="/login/">Log In.</a></li>
+{% endblock %}
+
 {% block section %}register{% endblock %}
 
 {% block page_title %}Thanks{% endblock %}
@@ -11,5 +17,5 @@
 {% endblock %}
 
 {% block form %}
-	<p><a class="button stroke smoothscroll" href="/#hero">Return Home</a></p>
+	<h5><a href="/#hero">Return Home</a></h5>
 {% endblock %}

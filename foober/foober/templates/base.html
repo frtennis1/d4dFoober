@@ -26,12 +26,12 @@
 </head>
 <body>
 
-		<!-- <div id="preloader"> 
-			<div id="status">
-				<img src="{% static 'foodoffers/images/loader.gif' %}" height="60" width="60" alt="">
-				<div class="loader">Loading...</div>
-			</div>
-		</div> -->
+	<div id="preloader"> 
+		<div id="status">
+			<img src="{% static 'foodoffers/images/loader.gif' %}" height="60" width="60" alt="">
+			<div class="loader">Loading...</div>
+		</div>
+	</div>
 
 	<!-- Navigation header
 	=================================================== -->
@@ -40,7 +40,7 @@
    	<div class="row header-inner">
 
 		<div class="logo">
-	        <a class="smoothscroll" href="/"></a>
+	        <a href="/">foober.</a>
 		</div>
 
 	    <nav id="nav-wrap">         
@@ -55,11 +55,11 @@
          	</a>         
 
 	        <ul id="nav" class="nav">
-			      {% block navigation %}
-						<li class="current"><a href="/">Home.</a></li>
-						<li><a href="/register/">Sign Up.</a></li>             
-						<li><a href="/login/">Log In.</a></li>
-						{% endblock %}
+			    {% block navigation %}
+					<li class="current"><a href="/">Home.</a></li>
+					<li><a href="/register/">Sign Up.</a></li>             
+					<li><a href="/login/">Log In.</a></li>
+				{% endblock %}
 	        </ul> 
 
 	      	</nav> <!-- /nav-wrap -->	      
