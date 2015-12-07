@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^thanks/offer/([0-9])$', thank_offer),
     url(r'^login/$', login, {'template_name': 'log_in.html'}),
     url(r'^login/?next=(.*)$', login, {'template_name': 'log_in.html'}),
-    url(r'^logout/$', logout),
+    url(r'^logout/$', logout, {'next_page': '/'}),
     url(r'^static/(.*)', return_static_file),
     url(r'^accounts/profile/$', see_profile),
     url(r'^admin/', include(admin.site.urls)),
