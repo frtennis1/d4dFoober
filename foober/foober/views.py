@@ -13,6 +13,7 @@ from forms import *
 def populate_home_page(request):
     return render(request, 'index.html', {})
 
+@login_required
 def populate_browse(request):
     return render(request, 'browse.html', {'offer_list': FoodOffer.objects.all()})
 
@@ -24,10 +25,6 @@ def populate_long_offer(request, offer_id):
         raise Http404("Offer " + str(offer_id) + " does not exist.")
         
     return render(request, 'long_offer.html', {'offer': offer})
-    
-def populate_logout(request):
-	logout(request)
-	return render(request, 'index.html', {})
 
 def get_new_user(request):
     # if this is a POST request we need to process the form data
@@ -51,25 +48,6 @@ def get_new_user(request):
         form = NewUser()
 
     return render(request, 'new_user.html', {'form': form})
-
-def populate_login(request):
-    if request.method == 'POST':
-        form = LogIn(request.POST)
-        if form.is_valid():
-            user = authenticate(username=request.POST['username'],
-                                password=request.POST['password'])
-            if user is not None:
-                if user.is_active:
-                    login(request,user)
-                    return HttpResponseRedirect('/browse/')
-                else:
-                    return HttpResponseRedirect('/login/')
-            else:
-                return HttpResponseRedirect('/login/')
-    else:
-        form = LogIn()
-    
-    return render(request, 'log_in.html', {'form': form})
 
 @login_required
 def see_profile(request):
@@ -104,3 +82,7 @@ def get_new_offer(request):
         form = Offer()
 
     return render(request, 'name.html', {'form': form})
+
+def confirm_request(request, offer_id):
+    offer_id = int(offer_id)
+    return render(request, "confirm_request.html", {"offer": FoodOffer.objects.get(id=offer_id)})

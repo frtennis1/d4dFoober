@@ -6,6 +6,7 @@
 	<li><a href="/">Home.</a></li>
 	<li><a href="/offer/">Offer Food.</a></li>
 	<li class="current"><a href="/browse/">Browse Food.</a></li>
+	<li><a href="/accounts/profile/">My Account</a></li>
 	<li><a href="/logout/">Log out.</a></li>
 {% endblock %}
 
@@ -44,10 +45,7 @@
 	            </div> <!-- /bgrid -->
 
 			   	<div class="bgrid">
-	               	<h3>Price:</h3>
-	               	<div class="service-content">		                  
-		               	<p>${{ offer.price }}</p> 
-	               	</div>                               
+	               	<a class="submit full-width", href="/confirm/{{ offer.id }}">Request!</a>                             
 	            </div> <!-- /bgrid -->
 	      	</div> <!-- /service-list -->
 	      </div> <!-- /twelve -->
