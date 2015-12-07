@@ -97,7 +97,7 @@ def confirm_request(request, offer_id):
     except:
         raise Http404("Offer " + str(offer_id) + " does not exist.")
     response =  render(request, "confirm_request.html", {"offer": offer})
-    response.set_cookie('confirmed' + str(offer_id),"yes")
+    response.set_cookie('confirmed' + str(offer_id),"yes", max_age=120)
     return response
 
 @login_required
@@ -113,7 +113,6 @@ def request_food(request, offer_id):
                                 party_size = 1,
                                 accepted = False)
     if ("confirmed" + str(offer_id)) not in request.COOKIES.keys():
-        print request.COOKIES.keys()
         return HttpResponseRedirect('/confirm/' + str(offer_id))
     if len(FoodRequest.objects.filter(offer=offer, requester=request.user)) == 0:
         food_request.save()
@@ -144,17 +143,17 @@ def get_new_offer(request):
         form = NewOffer(request.POST, request.FILES)
         # check whether it's valid:
         if form.is_valid():
-            o = FoodOffer(user = request.user,
+            o = FoodOffer(user = User.objects.get(pk=request.user.id),
                         address = request.POST.get('address'),
                         description = request.POST.get('description'),
-                        picture = request.POST.get('picture'),
+                        picture = request.FILES['picture'],
                         price = request.POST.get('price'),
                         max_people = request.POST.get('max_people'),
                         available_people = request.POST.get('max_people'),
                         offer_datetime = request.POST.get('offer_datetime')
                     )
             o.save()
-            return HttpResponseRedirect('/thanks/offer/' + o.id)
+            return HttpResponseRedirect('/thanks/offer/' + str(o.id))
 
     # if a GET (or any other method) we'll create a blank form
     else:
