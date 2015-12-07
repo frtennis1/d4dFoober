@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, Http404, HttpResponse
 from foodoffers.models import *
 from django.contrib.auth.hashers import make_password
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 from forms import *
 
@@ -55,8 +56,6 @@ def populate_login(request):
     if request.method == 'POST':
         form = LogIn(request.POST)
         if form.is_valid():
-            print request.POST['username']
-            print request.POST.get('password')
             user = authenticate(username=request.POST['username'],
                                 password=request.POST['password'])
             if user is not None:
@@ -71,6 +70,11 @@ def populate_login(request):
         form = LogIn()
     
     return render(request, 'log_in.html', {'form': form})
+
+@login_required
+def see_profile(request):
+    offers = FoodOffer.objects.prefetch_related('foodrequest_set').filter(user=request.user)
+    return render(request, 'myaccount.html', {'offer_list': offers})
             
 def return_static_file(request, fname):
     try:

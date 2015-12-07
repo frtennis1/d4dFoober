@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from views import *
+from django.contrib.auth.views import login, logout
 
 urlpatterns = [
     url(r'^$', populate_home_page),
@@ -23,8 +24,9 @@ urlpatterns = [
     url(r'^browse/([0-9]+)$', populate_long_offer),
     url(r'^register/$', get_new_user),
     url(r'^thanks/$', populate_user_created),
-    url(r'^login/$', populate_login),
-    url(r'^logout/$', populate_logout),
+    url(r'^login/$', login, {'template_name': 'log_in.html'}),
+    url(r'^logout/$', logout),
     url(r'^static/(.*)', return_static_file),
+    url(r'^accounts/profile/$', see_profile),
     url(r'^admin/', include(admin.site.urls)),
 ]

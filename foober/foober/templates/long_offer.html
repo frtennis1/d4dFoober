@@ -9,13 +9,13 @@
 	<li><a href="/logout/">Log out.</a></li>
 {% endblock %}
 
-{% block page_title %}{{ offer.user.username }} wants to share a meal with you{% endblock %}
+{% block page_title %}{{ offer.user.first_name }} wants to share a meal with you{% endblock %}
 
 {% block content %}
 <section id="services">
    	<div class="row section-head">
    		<div class="twelve columns">
-	         <h1>Your host: {{ offer.user.username }}<span>.</span></h1>
+	         <h1>Your host: {{ offer.user.first_name }}<span>.</span></h1>
 	         <hr>
          </div>
       </div>
@@ -37,7 +37,7 @@
 	            </div> <!-- /bgrid -->
 	            
 	            <div class="bgrid">
-	               	<h3>When?</h3>                  
+	               	<h3>Where?</h3>                  
 	               	<div class="service-content">	                  
 		               	<p>{{ offer.address }}</p> 
 	              	</div>                                 

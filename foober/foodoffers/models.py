@@ -23,11 +23,13 @@ class FoodOffer(models.Model):
     picture = models.ImageField(upload_to='/food/')
     price = models.DecimalField(max_digits=5,decimal_places = 2)
     max_people = models.PositiveSmallIntegerField()
+    available_people = models.PositiveSmallIntegerField()
     offer_datetime = models.DateTimeField()
 
 class FoodRequest(models.Model):
     offer = models.ForeignKey(FoodOffer)
     requester = models.ForeignKey(User)
     timestamp = models.DateTimeField(auto_now=True)
+    party_size = models.PositiveSmallIntegerField()
     accepted = models.BooleanField(default=False)
 
