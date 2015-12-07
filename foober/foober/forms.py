@@ -39,15 +39,15 @@ class LogIn(forms.Form):
         widget=forms.TextInput(attrs={'placeholder': 'Username'}))
     password = forms.CharField(max_length=32, widget=(forms.PasswordInput(render_value=False, attrs={'placeholder': 'Password'})))
 
-class Offer(forms.Form):
+class NewOffer(forms.Form):
     address = forms.CharField(label='Enter the address at which the food will be served',
-                            widget = forms.Textarea)
+                            widget = forms.Textarea(attrs={'placeholder': 'Address'}))
     description = forms.CharField(label='What type of food are you offering? Be as descriptive as possible!',
-                            widget = forms.Textarea)  
+                            widget = forms.Textarea(attrs={'placeholder': 'Description of food.'}))  
                             
     # make sure to default this to a logo of a plate                  
     picture = forms.ImageField()
     
-    price = forms.DecimalField(min_value = 0, max_value = 999.99, max_digits=5, decimal_places=2)
-    max_people = forms.IntegerField(min_value = 1, max_value = 100)
-    offer_datetime = forms.DateTimeField()
+    price = forms.DecimalField(min_value = 0, max_value = 999.99, max_digits=5, decimal_places=2, widget=forms.TextInput(attrs={'placeholder': 'Price per Person'}))
+    max_people = forms.IntegerField(min_value = 1, max_value = 100, widget=forms.NumberInput(attrs={'placeholder': 'Max Num People'}))
+    offer_datetime = forms.DateTimeField(widget=forms.DateTimeInput(format = 'M j, Y: P', attrs={'placeholder': 'Date and Time'}))

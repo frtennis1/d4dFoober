@@ -4,19 +4,19 @@
 
 {% block navigation %}
 	<li><a href="/">Home.</a></li>
-	<li><a href="/offer/">Offer Food.</a></li>
-	<li class="current"><a href="/browse/">Browse Food.</a></li>
+	<li class="current"><a href="/offer/">Offer Food.</a></li>
+	<li><a href="/browse/">Browse Food.</a></li>
 	<li><a href="/accounts/profile/">My Account</a></li>
 	<li><a href="/logout/">Log out.</a></li>
 {% endblock %}
 
-{% block page_title %}{{ offer.user.first_name }} wants to share a meal with you{% endblock %}
+{% block page_title %} Thanks for sharing! {% endblock %}
 
 {% block content %}
 <section id="services">
    	<div class="row section-head">
    		<div class="twelve columns">
-	         <h1>Your host: {{ offer.user.first_name }}<span>.</span></h1>
+	         <h1>Details of your submissions:<span>.</span></h1>
 	         <hr>
          </div>
       </div>

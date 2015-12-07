@@ -4,7 +4,7 @@
 
 <section id="services">
 	<div class="row section-head">
-		<p>Are you sure you want to join {{ offer.first_name }} for a meal on {{ offer.offer_datetime|date:'b j, Y: P'}}?.</p>
+		<p>Are you sure you want to join {{ offer.first_name }} for a meal on {{ offer.offer_datetime|date:'M j, Y: P'}}?.</p>
 
 		<a href="/request/{{ offer.id }}"> Yes! </a>
 		<a href="/browse/{{ offer.id }}"> Not sure yet. </a>

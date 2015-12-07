@@ -9,22 +9,31 @@
 	<li><a href="/logout/">Log out.</a></li>
 {% endblock %}
 
-{% block page_title %}Browse Offers{% endblock %}
+{% block page_title %}Offer Food{% endblock %}
 
 {% block content %}
-{% include "search.html" %}
 
-<section id="search">
-	<div class="row">
-		<div class="tab-whole nine columns">
-			{% for offer in offer_list %}
-				<a href="/browse/{{forloop.counter}}">
-					<div class="alert-box notice hideit">
-						<p>{% include "short_offer.html" %}</p>
-					</div><!-- /notice -->
-				</a>
-			{% endfor %}
-		</div>
-	</div>
-</section>
+{% block form %}
+  <form name="Offer" id="Offer" method="post" action="/offer/" enctype="multipart/form-data">
+    <fieldset>
+        {% csrf_token %}
+        <div class="row">
+        {% for field in form %}
+            <div class="six columns mob-whole">
+                <div class="field {% if field.errors %} field_error {% endif %}">
+                    {{ field }} 
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:"2" %}</div><div class="row">{% endif %}
+        {% endfor %}
+        </div>
+
+        <div>
+            <button class="submit full-width">Offer!</button>
+        </div>
+    </fieldset>
+  </form><!-- Register Form -->
+{% endblock %}
+
+
 {% endblock %}
