@@ -41,9 +41,9 @@ class LogIn(forms.Form):
 
 class NewOffer(forms.Form):
     address = forms.CharField(label='Enter the address at which the food will be served',
-                            widget = forms.Textarea(attrs={'placeholder': 'Address'}))
+                            widget = forms.Textarea(attrs={'placeholder': 'What address will the food be offered at?'}))
     description = forms.CharField(label='What type of food are you offering? Be as descriptive as possible!',
-                            widget = forms.Textarea(attrs={'placeholder': 'Description of food.'}))  
+                            widget = forms.Textarea(attrs={'placeholder': 'What type of food are you offering? Be as descriptive as possible!'}))  
                             
     # make sure to default this to a logo of a plate                  
     picture = forms.ImageField()

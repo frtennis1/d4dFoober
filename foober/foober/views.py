@@ -12,8 +12,11 @@ from forms import *
 #     return HttpResponseRedirect('/register/')
 
 def populate_home_page(request):
-    return render(request, 'index.html', {})
-
+    if request.user.is_authenticated():
+        return render(request, 'index.html', {'authenticated': True})
+    else:
+        return render(request, 'index.html', {'authenticated': False})
+        
 @login_required
 def populate_browse(request):
     return render(request, 'browse.html', {'offer_list': FoodOffer.objects.all()})
@@ -140,7 +143,7 @@ def get_new_offer(request):
         # create a form instance and populate it with data from the request:
         form = NewOffer(request.POST, request.FILES)
         # check whether it's valid:
-        if form.is_valid() and request.POST.get('confirm') == request.POST.get('password'):
+        if form.is_valid():
             o = FoodOffer(user = request.user,
                         address = request.POST.get('address'),
                         description = request.POST.get('description'),

@@ -2,6 +2,20 @@
 
 {% load staticfiles %}
 
+{% block navigation %}
+{% if authenticated %}
+  <li class="current"><a href="/">Home.</a></li>
+  <li><a href="/offer/">Offer Food.</a></li>
+  <li><a href="/browse/">Browse Food.</a></li>
+  <li><a href="/accounts/profile/">My Account</a></li>
+  <li><a href="/logout/">Log out.</a></li>
+{% else %}
+  <li class="current"><a href="/">Home.</a></li>
+  <li><a href="/register/">Sign Up.</a></li>             
+  <li><a href="/login/">Log In.</a></li>
+{% endif %}
+{% endblock %}
+
 {% block title %} Home {% endblock %}
 
 <!-- Hero
@@ -47,7 +61,9 @@
 
 	         <hr />
 
-	         <p>Francisco should write this.
+	         <p>Ever wanted a quality meal? A <em>really</em> good meal? But without any of the bells and whistles of a high-end establishment that costs you an arm and a leg. Look through our offerings now!</p>
+
+           <p>Ever buy enough ingredients that you could eat the same meal for an entire week? We provide a marketplace for users to sell a place at their table for a reasonable price. Share your love for food and put a little extra cash back in your pocket.
 	         </p>
 
 	      </div>
